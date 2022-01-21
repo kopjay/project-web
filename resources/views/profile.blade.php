@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <h4 class="text-center" style="color: #a748aa">Wellcome to JH Furniture</h4>
+        <h4 class="text-center" style="color: #2699d6">Wellcome to JH Furniture</h4>
 
         <div style="text-align: center;">
         <div>
@@ -68,11 +68,11 @@
             <div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4" style="text-align: right;"><a class="btn btn-primary" role="button" style="text-align: left;background: #a748aa;" href="{{ route('logout') }}"
+                        <div class="col-md-4" style="text-align: right;"><a class="btn btn-primary" role="button" style="text-align: left;background: #2699d6;" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">Logout</a></div>
-                        <div class="col-md-4"><a class="btn btn-primary" role="button" style="background: #a748aa;" href="ViewTransactionHistoryPageforMember.html">View All User's Transaction</a></div>
-                        <div class="col-md-4" style="text-align: left;"><a class="btn btn-primary" role="button" style="background: #a748aa;" href="UpdateProfileMember.html">Update Profile</a></div>
+                        <div class="col-md-4"><a class="btn btn-primary" role="button" style="background: #2699d6;" href="ViewTransactionHistoryPageforMember.html">View All User's Transaction</a></div>
+                        <div class="col-md-4" style="text-align: left;"><a class="btn btn-primary" role="button" style="background: #2699d6;" href="UpdateProfileMember.html">Update Profile</a></div>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ class MusicController extends Controller
     public function detail($id)
     {
         $data = Music::findOrFail($id);
-        return view('music.index', ['data' => $data]); 
+        return view('music.detail', ['data' => $data]); 
     }
 
     public function add()
@@ -47,12 +47,13 @@ class MusicController extends Controller
         $file = $request->file('image');
         $music = $request->file('music');
         $ext = $file->getClientOriginalExtension();
-        $ext = $music->getClientOriginalExtension();
+        $extMusic = $music->getClientOriginalExtension();
         $newName = $request->input('name')."".rand(1,100).".".$ext;
+        $newNameMusic = $request->input('name')."".rand(1,100).".".$extMusic;
         $file->move('uploads/images',$newName);
         $music->move('uploads/music',$newName);
         $data->image = $newName;
-        $data->music = $newName;
+        $data->music = $newNameMusic;
         $data->save();
 
         return redirect()->back()->with('success', 'Data berhasil dibuat');

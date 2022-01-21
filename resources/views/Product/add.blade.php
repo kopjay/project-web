@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <h4 class="text-center" style="color: #a748aa; margin-bottom:20px"> <b> Tambah Music </b></h4>
+        <h4 class="text-center" style="color: #2699d6; margin-bottom:20px"> <b> Tambah Music </b></h4>
         <div class="col-md-5">
             <form action="{{url('music/store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -60,7 +60,7 @@
                 <br>
                 <div class="form-group row">
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary" style="background-color:#a748aa;">Submit</button>
+                        <button type="submit" class="btn btn-primary" style="background-color:#2699d6;">Submit</button>
                     </div>
                 </div>
               </form>

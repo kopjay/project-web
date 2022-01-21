@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\ProductController::class, 'index'])->name('dash');
-Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\MusicController::class, 'index'])->name('dash');
+Route::get('/home', [App\Http\Controllers\MusicController::class, 'index'])->name('home');
 Route::get('/view', [App\Http\Controllers\ProductController::class, 'view'])->name('view');
 Route::get('/add', [App\Http\Controllers\ProductController::class, 'add'])->name('add_product');
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'detail'])->name('detail');

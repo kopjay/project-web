@@ -10,6 +10,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -52,7 +60,7 @@
 
                             @if(Auth::user()->role == 1)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('/add')}}">{{ __('Add Furniture') }}</a>
+                                    <a class="nav-link" href="{{url('/add')}}">{{ __('Tambah Music') }}</a>
                                 </li>
                             @endif
 
@@ -84,4 +92,5 @@
         </main>
     </div>
 </body>
+<script href="{{ asset('assets/bootstrap/css/bootstrap.min.js') }}" > </script>
 </html>
