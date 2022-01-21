@@ -3,17 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <h4 class="text-center" style="color: #2699d6">Wellcome to JH Furniture</h4>
+        <h4 class="text-center" style="color: #2699d6; margin-bottom:30px">Profile</h4>
 
+        
         <div style="text-align: center;">
-        <div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p class="text-end" style="width: 423px;">Full Name</p>
+                        <p class="text-end" style="width: 393px;">Name</p>
                     </div>
                     <div class="col-md-6">
-                        <p class="text-start">{{$data->name}}</p>
+                        <p class="text-start">: {{$data->name}}</p>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                         <p class="text-end" style="width: 391px;">Email</p>
                     </div>
                     <div class="col-md-6">
-                        <p class="text-start">{{$data->email}}</p>
+                        <p class="text-start">: {{$data->email}}</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         <p class="text-end" style="width: 410px;">Address</p>
                     </div>
                     <div class="col-md-6">
-                        <p class="text-start">{{$data->address}}</p>
+                        <p class="text-start">: {{$data->address}}</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         <p class="text-end" style="width: 404px;">Gender</p>
                     </div>
                     <div class="col-md-6">
-                        <p class="text-start">{{$data->gender}}</p>
+                        <p class="text-start">: {{$data->gender}}</p>
                     </div>
                 </div>
             </div>
@@ -58,26 +58,23 @@
                     </div>
                     <div class="col-md-6">
                         @if($data->role==1)
-                        <p class="text-start">Admin</p>
+                        <p class="text-start">: Admin</p>
                         @else
-                        <p class="text-start">Member</p>
+                        <p class="text-start">: Member</p>
                         @endif
                     </div>
                 </div>
             </div>
+            <br>
             <div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-4" style="text-align: right;"><a class="btn btn-primary" role="button" style="text-align: left;background: #2699d6;" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">Logout</a></div>
-                        <div class="col-md-4"><a class="btn btn-primary" role="button" style="background: #2699d6;" href="ViewTransactionHistoryPageforMember.html">View All User's Transaction</a></div>
-                        <div class="col-md-4" style="text-align: left;"><a class="btn btn-primary" role="button" style="background: #2699d6;" href="UpdateProfileMember.html">Update Profile</a></div>
-                    </div>
+                        
+                    <a href="{{url('profile/'.Auth::user()->id)}}" class="btn btn-primary font-weight-bolder" style="width:130px;">
+                        <span class="fa fa-edit"></span> Update Data
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
         
     </div>
 </div>

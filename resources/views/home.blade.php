@@ -10,7 +10,8 @@
             <a href="{{url('music').'/'.$d->id}}">
                 <img class="card-img-top" src="{{asset('uploads/images/').'/'.$d->image}}" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">{{$d->artist}}</h4>
+                    <h4 class="card-title">{{$d->name}}</h4>
+                    <p class="card-text">{{$d->artist}}</p>
                 </div>
             </a>
         </div>

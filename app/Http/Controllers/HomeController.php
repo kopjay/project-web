@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Product;
+use App\Models\User;
 use Auth;
 
 class HomeController extends Controller
@@ -32,6 +34,24 @@ class HomeController extends Controller
     {
         $data = Auth::user();
         return view('profile', ['data' => $data]); 
+    }
+
+    public function profileEdit()
+    {
+        $data = Auth::user();
+        return view('profileEdit', ['data' => $data]); 
+    }
+
+    public function profileUpdate(Request $request)
+    {
+
+        User::where('id', Request()->input('user_id'))->update([
+            'name' => Request()->input('name'),
+            'email' => Request()->input('email'),
+            'address' => Request()->input('address'),
+            'password' => Hash::make(Request()->input('password')),
+        ]);
+        return redirect('profile')->with('success', 'Data berhasil dibuat');
     }
 
     public function view()

@@ -35,9 +35,9 @@
                     <div class="col-sm-9">
                         <select class="form-control" name="category_id" required>
                             <option value="0" selected="">--Pilih Kategori--</option>
-                            <option value="1">Pop</option>
-                            <option value="2">Blues</option>
-                            <option value="3">Jazz</option>
+                            @foreach($category as $a)
+                            <option value="{{$a->id}}">{{$a->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

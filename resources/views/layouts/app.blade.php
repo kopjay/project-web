@@ -10,17 +10,20 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         a {
             color: black;
             text-decoration: none;
         }
+        .allButFooter {
+            min-height: calc(100vh - 40px);
+        }
     </style>
 </head>
-<body>
-    <div id="app">
+<body style="height: 100%">
+    <div id="app" class="allButFooter">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -35,12 +38,6 @@
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/')}}">{{ __('Home') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/view')}}">{{ __('View') }}</a>
-                        </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -54,6 +51,15 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/')}}">{{ __('Home') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/playlist')}}">{{ __('Playlist') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/category')}}">{{ __('Kategori') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('profile')}}">{{ __('Profile') }}</a>
                             </li>
@@ -91,6 +97,12 @@
             @yield('content')
         </main>
     </div>
+    <footer class="bg-light text-center text-lg-start" style="bottom: 0">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Kelompok C © 2020 Copyright:
+        </div>
+    </footer>
 </body>
-<script href="{{ asset('assets/bootstrap/css/bootstrap.min.js') }}" > </script>
+
+
 </html>
